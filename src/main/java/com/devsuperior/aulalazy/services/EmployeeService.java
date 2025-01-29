@@ -40,7 +40,7 @@ public class EmployeeService {
 
 	@Transactional(readOnly = true)
 	public List<EmployeeMinDTO> findByName(String name) {
-		List<Employee> result = repository.findByName(name);
+		List<Employee> result = repository.findByNameIgnoreCase(name);
 		return result.stream().map(x-> new EmployeeMinDTO(x)).toList();
 	}
 }

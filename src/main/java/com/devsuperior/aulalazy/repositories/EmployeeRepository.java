@@ -13,5 +13,5 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 	@Query("SELECT obj FROM Employee obj JOIN FETCH obj.department")
 	List<Employee> findEmployeesWithDepartments();
 
-	List<Employee> findByName(String name);
+	List<Employee> findByNameIgnoreCase(String name);
 }
